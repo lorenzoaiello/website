@@ -1,6 +1,9 @@
 dist: trusty
 sudo: required
 
+env:
+  - TERRAFORM_VERSION=0.12.3
+
 # Fetch terraform
 before_install:
   - curl -sLo terraform.zip https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
@@ -10,4 +13,4 @@ before_install:
   - export PATH="~/bin:$PATH"
 
 script:
-  - terraform fmt
+  - cd infrastructure && terraform fmt
