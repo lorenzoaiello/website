@@ -12,7 +12,7 @@ resource "aws_s3_bucket" "site" {
 data "aws_iam_policy_document" "s3_policy" {
   statement {
     actions   = ["s3:GetObject"]
-    resources = ["${aws_s3_bucket.site.arn}/*"]
+    resources = ["arn:aws:s3:::lorenzo-aiello-family/*"]
 
     principals {
       type        = "AWS"
@@ -22,7 +22,7 @@ data "aws_iam_policy_document" "s3_policy" {
 
   statement {
     actions   = ["s3:ListBucket"]
-    resources = [aws_s3_bucket.example.arn]
+    resources = ["arn:aws:s3:::lorenzo-aiello-family"]
 
     principals {
       type        = "AWS"
