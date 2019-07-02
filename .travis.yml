@@ -13,4 +13,4 @@ before_install:
   - export PATH="~/bin:$PATH"
 
 script:
-  - cd infrastructure && terraform fmt
+  - terraform fmt -check infrastructure
