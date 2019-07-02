@@ -33,6 +33,7 @@ script:
   # Run Jekyll
   - cd .. && cd src
   - gem install jekyll html-proofer
+  - bundle install
   - jekyll build
   - htmlproofer ./_site
 
