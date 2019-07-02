@@ -1,4 +1,5 @@
 resource "aws_acm_certificate" "cert" {
+  provider          = aws.east
   domain_name       = "lorenzo.aiello.family"
   validation_method = "DNS"
 }

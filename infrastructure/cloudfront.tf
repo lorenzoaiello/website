@@ -12,7 +12,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   is_ipv6_enabled     = true
   default_root_object = "index.html"
 
-  aliases = ["lorenzo.aiello.family", "www.lorenzo.aiello.family"]
+  aliases = ["lorenzo.aiello.family"]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
