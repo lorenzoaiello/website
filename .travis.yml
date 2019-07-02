@@ -1,0 +1,13 @@
+dist: trusty
+sudo: required
+
+# Fetch terraform
+before_install:
+  - curl -sLo terraform.zip https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+  - unzip terraform.zip
+  - mkdir -p ~/bin
+  - mv terraform ~/bin
+  - export PATH="~/bin:$PATH"
+
+script:
+  - terraform fmt
