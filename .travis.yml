@@ -9,7 +9,7 @@ addons:
     - libcurl4-openssl-dev
 #cache: bundler
 env:
-  - TERRAFORM_VERSION=0.12.3 NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  - TERRAFORM_VERSION=0.12.3 NOKOGIRI_USE_SYSTEM_LIBRARIES=true TF_LOG=trace
 
 before_install:
   # Install terraform
