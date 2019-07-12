@@ -39,7 +39,7 @@ deploy:
   provider: s3
   bucket: "lorenzoaiello-website-entrypoint"
   skip_cleanup: true
-  upload-dir: src/_site
+  local_dir: src/_site
   region: us-east-1
 
 branches:
