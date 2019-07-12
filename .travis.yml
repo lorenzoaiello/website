@@ -7,7 +7,6 @@ addons:
   apt:
     packages:
     - libcurl4-openssl-dev
-    - python3
 #cache: bundler
 env:
   - TERRAFORM_VERSION=0.12.3 NOKOGIRI_USE_SYSTEM_LIBRARIES=true
@@ -35,10 +34,13 @@ script:
   - cd .. && cd src
   - bundle install
   - jekyll build
-  
-  # Install awscli and Upload Site
-  - pip3 install awscli --upgrade --user
-  - aws s3 sync ./src/_site s3://lorenzoaiello-website-entrypoint --delete
+
+deploy:
+  provider: s3
+  bucket: "lorenzoaiello-website-entrypoint"
+  skip_cleanup: true
+  upload-dir: ./src/_site
+  region: us-west-2
 
 branches:
   only:
