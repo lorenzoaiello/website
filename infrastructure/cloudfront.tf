@@ -1,6 +1,6 @@
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
-    domain_name = aws_s3_bucket.site.bucket_regional_domain_name
+    domain_name = aws_s3_bucket.website.bucket_regional_domain_name
     origin_id   = "S3StaticSite"
 
     s3_origin_config {
