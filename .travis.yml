@@ -40,7 +40,7 @@ deploy:
   bucket: "lorenzoaiello-website-entrypoint"
   skip_cleanup: true
   upload-dir: ./src/_site
-  region: us-west-2
+  region: us-east-1
 
 branches:
   only:
