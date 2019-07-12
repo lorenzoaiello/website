@@ -7,7 +7,7 @@ resource "aws_route53_record" "mx" {
   name    = "lorenzo.aiello.family"
   type    = "MX"
   ttl     = "300"
-  records = ["lorenzo-aiello-family.mail.protection.outlook.com"]
+  records = ["0 lorenzo-aiello-family.mail.protection.outlook.com"]
 }
 
 resource "aws_route53_record" "spf" {
