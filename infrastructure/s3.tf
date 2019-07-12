@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "website" {
-  bucket = "lorenzo-aiello-family"
+  bucket = "lorenzoaiello-website-entrypoint"
   acl    = "private"
   policy = data.aws_iam_policy_document.s3_policy.json
 
@@ -12,7 +12,7 @@ resource "aws_s3_bucket" "website" {
 data "aws_iam_policy_document" "s3_policy" {
   statement {
     actions   = ["s3:GetObject"]
-    resources = ["arn:aws:s3:::lorenzo-aiello-family/*"]
+    resources = ["arn:aws:s3:::lorenzoaiello-website-entrypoint/*"]
 
     principals {
       type        = "AWS"
@@ -22,7 +22,7 @@ data "aws_iam_policy_document" "s3_policy" {
 
   statement {
     actions   = ["s3:ListBucket"]
-    resources = ["arn:aws:s3:::lorenzo-aiello-family"]
+    resources = ["arn:aws:s3:::lorenzoaiello-website-entrypoint"]
 
     principals {
       type        = "AWS"
