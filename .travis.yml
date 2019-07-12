@@ -34,8 +34,6 @@ script:
   - cd .. && cd src
   - bundle install
   - jekyll build
-  - gem install html-proofer
-  - htmlproofer ./_site
 
 branches:
   only:
